@@ -1,0 +1,47 @@
+{
+  "cars": [{
+      "id": "1",
+      "Model": "2019 Maserati GranTurismo",
+      "image": "images/Maserati.png",
+      "seating capacity": 4,
+      "price": "$150,380",
+      "colors": "black",
+      "horsepower": "454 hp",
+      "engine": "4.7 L V8",
+      "MPG": "13 city / 20 highway"
+    },
+    {
+      "id": "2",
+      "Model": "2018 Audi R8",
+      "image": "images/audir8.png",
+      "seating capacity": 2,
+      "price": "$138,700",
+      "colors": "white",
+      "horsepower": "602 hp",
+      "engine": "5.2 L V10",
+      "MPG": "14 city / 25 highway"
+    },
+     {
+      "id": "3",
+      "Model": "2019 BMW i8 Coupe",
+      "image": "images/bmw.png",
+      "seating capacity": 4,
+      "price": "$147,500",
+      "colors": "silver",
+      "horsepower": "369 hp",
+      "engine": "1.5 L 3-cylinder",
+      "MPG": "27 city / 27 highway"
+    },
+       {
+      "id": "4",
+      "Model": "2019 Porsche 911",
+      "image": "images/porsche911.png",
+      "seating capacity": 4,
+      "price": "$91,100",
+      "colors": "red",
+      "horsepower": "370 hp",
+      "engine": "4.0 L 6-cylinder",
+      "MPG": "20 city / 29 highway"
+    }
+  ]
+}
