@@ -8,7 +8,8 @@
       "colors": "white",
       "horsepower": "602 hp",
       "engine": "5.2 L V10",
-      "MPG": "14 city / 25 highway"
+      "MPG": "14 city / 25 highway",
+      "isClicked": false
     },
     {
       "id": "2",
@@ -19,7 +20,8 @@
       "colors": "black",
       "horsepower": "454 hp",
       "engine": "4.7 L V8",
-      "MPG": "13 city / 20 highway"
+      "MPG": "13 city / 20 highway",
+      "isClicked": false
     },
      {
       "id": "3",
@@ -30,7 +32,8 @@
       "colors": "silver",
       "horsepower": "369 hp",
       "engine": "1.5 L 3-cylinder",
-      "MPG": "27 city / 27 highway"
+      "MPG": "27 city / 27 highway",
+      "isClicked": false
     },
        {
       "id": "4",
@@ -41,7 +44,8 @@
       "colors": "red",
       "horsepower": "370 hp",
       "engine": "4.0 L 6-cylinder",
-      "MPG": "20 city / 29 highway"
+      "MPG": "20 city / 29 highway",
+      "isClicked": false
     }
   ]
 }

@@ -8,16 +8,13 @@ import '../App.css';
 export default class Cars extends Component {
   state = {
     cardata: [],
-    products:[],
-    isClicked: false
+    products:[]
   };
 
- 
 
   componentDidMount() {
     axios.get(`document.json`).then(res => {
-      var car = res.data.cars;
-
+      const car = res.data.cars;
       this.setState({
         cardata: car
       });
@@ -25,19 +22,24 @@ export default class Cars extends Component {
   }
 
 compare =(product) => {
-    var arrayOfProducts = [this.state.products], b={}
-    const comparingCars = product
-    arrayOfProducts.push(b)
-
-    this.setState({
-        products: comparingCars,
-        isClicked: true
-        })
-        
-}
+    const car = this.state.cardata.find(car => (
+        car.id === product.id
+    ))
+    car.isClicked = !car.isClicked
+    let newData 
+    if(car.isClicked){
+        newData = [...this.state.products, product]
+    } else {
+        let oldData = [...this.state.products]
+        newData = oldData.filter(data => {
+            return parseInt(data.id) !== parseInt(product.id)})  
+    }
+   
   
-
-
+   this.setState({
+            products: newData
+        })      
+}
 
 
   render() {
@@ -45,7 +47,7 @@ compare =(product) => {
 
     return (
       <div className="grey lighten-4">
-          <p className="compare_title teal-text text-darken-2">Compare Chart</p>
+          <p className="compare_title white-text">Comparison Chart</p>
         <div className="containit" style={{display: 'flex'}}>
           {carjson.map((res, i) => (
             
@@ -60,7 +62,7 @@ compare =(product) => {
               
             >
             <div className="middle">
-              <div className="text">John Doe</div>
+              <div className="text">{res.isClicked ? "Remove" : "Compare"}</div>
               </div>
            
           
@@ -81,37 +83,49 @@ compare =(product) => {
             <thead>
             <tr>
                 <th></th>
-                <th>{this.state.products.Model}</th>
+                {this.state.products.map((carInfo, i) => (
+                    <th key={i}>{carInfo.Model}</th>
+                ))}
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>PRICE</td>
-                <td>{this.state.products.price}</td>
+                {this.state.products.map((carInfo, i) => (
+                    <td key={i}>{carInfo.price}</td>
+                ))}
             
             </tr>
             <tr>
                  <td>MPG</td>
-                <td>{this.state.products.MPG}</td>
+                {this.state.products.map((carInfo, i) => (
+                    <td key={i}>{carInfo.MPG}</td>
+                ))}
             </tr>
             <tr>
                 <td>Seating Capacity</td>
-                <td>{this.state.products.seating_capacity}</td>
+                {this.state.products.map((carInfo, i) => (
+                    <td key={i}>{carInfo.seating_capacity}</td> ))}
             </tr>
 
             <tr>
                  <td>Color</td>
-                 <td>{this.state.products.colors}</td>
+                    {this.state.products.map((carInfo, i) => (
+                    <td key={i}>{carInfo.colors}</td>
+                     ))}
             </tr>
 
             <tr>
                 <td>Horsepower</td>
-                <td>{this.state.products.horsepower}</td>
+                {this.state.products.map((carInfo, i) => (
+                    <td key={i}>{carInfo.horsepower}</td>))}
             </tr>
 
             <tr>
                 <td>Engine</td>
-                <td>{this.state.products.engine}</td>
+                {this.state.products.map((carInfo, i) => (
+                    <td key={i}>{carInfo.engine}</td>
+                    ))}
             </tr>
             </tbody>
            
